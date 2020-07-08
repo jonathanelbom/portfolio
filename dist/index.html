@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1, maximum-scale=1"
+        />
+        <title>Jonathan Elbom - Crafted UX</title>
+        <link rel="stylesheet" href="css/styles-0.min.css" />
+        <link rel="stylesheet" href="css/styles-1.min.css" />
+        <link rel="stylesheet" href="css/styles.css" />
+        <link
+            rel="stylesheet"
+            href="//fonts.googleapis.com/css?family=Lato:300,400,500,700|Roboto+Mono"
+            type="text/css"
+        />
+    </head>
+    <body>
+        <div id="content">
+            <div class="Portfolio">
+                <header class="Portfolio__header">
+                    <h1>Jonathan Elbom</h1>
+                    <h2>Crafted UX</h2>
+                    <p>
+                        With expertise in the design and implementation of
+                        Motion, Interaction, and UI, it is my delight to be the
+                        difference that moves good to great.
+                    </p>
+                </header>
+                <main class="Portfolio__toc">
+                    <div class="Portfolio__wrapper">
+                        <div class="Portfolio__section">
+                            <h2>Who I Am</h2>
+                            <p>
+                                I make extraordinary user experiences come to
+                                life.
+                            </p>
+                            <p>
+                                I live at the intersection of the user, data,
+                                technology and design, and blend UX design and
+                                engineering expertise into a single progressive
+                                discipline. My focus on understanding user
+                                experience problems, technical capabilities, and
+                                opportunities on both fronts enables me to craft
+                                compelling experiences that are intuitive,
+                                thoughtful, simple and delightful.
+                            </p>
+                            <p>
+                                Over the span of my 20 year career, I have spent
+                                my time as an individual contributor, a mentor,
+                                a manager, and a champion for process
+                                improvements that close the gaps between teams
+                                in order to deliver world class user
+                                experiences.
+                            </p>
+                            <p>
+                                I seek a positive environment where I’m
+                                surrounded by encouraging, hardworking and
+                                passionate multi-disciplinary teams who inspire
+                                each other to take their craft to the next
+                                level.
+                            </p>
+                        </div>
+                        <div class="Portfolio__section">
+                            <h2>What I've Done</h2>
+                            <h3>2016 - 2020</h3>
+                            <p class="Portfolio__work">
+                                For the last 4 years, I have worked as a Sr.
+                                Design Technologist and Sr. Manager of Design
+                                Technology at Vrbo. At Vrbo I have created
+                                high-fidelity prototypes for usability labs as
+                                well as production components for the live site.
+                                I have contributed to bringing motion, layout,
+                                and interaction polish to the final product and
+                                have also composed production demos and advised
+                                teams around their UI implementation strategy.
+                                Please enjoy viewing this collection of work:
+                            </p>
+                            <a
+                                href="http://portfolio.jonnybomb.com/work/vrbo/"
+                                target="_blank"
+                                >View Vrbo Portfolio</a
+                            >
+                            <h3>2011 - 2020</h3>
+                            <p class="Portfolio__work">
+                                In addition to Vrbo, I maintain one contract
+                                client, Dr Steven Grey (MSU), whom I partnered
+                                with in 2011 to create Mental Modeler, a
+                                fuzzy-logic cognitive mapping web application.
+                                Mental Modeler is comprised of a concept mapper
+                                and a scenario suite, both of which I designed
+                                and implemented. We hae been award numerous
+                                grants including a million dollar NSF
+                                Cyberlearning grant in 2012. The software is
+                                accessed by 50,000 users per year and has
+                                produced more the 40 academic publications in
+                                2018 alone. The concept mapper was original
+                                writen in Actionscript 3 and I ported it to
+                                React/Redux in 2019. I also created 2
+                                instructional websites for Mental Modeler.
+                            </p>
+                            <a
+                                href="http://dev.mentalmodeler.com/"
+                                target="_blank"
+                                >View Mental Modeler</a
+                            >
+                            <h3>2001 - 2016</h3>
+                            <p class="Portfolio__work">
+                                Prior to working at Vrbo, I work at Pearson
+                                Education (2010 - 2016) on their high-stakes,
+                                summative assessment testing client (both
+                                Actionscript 3/Flex and HTML5). At Pearson, I
+                                also designed and lead the UI development for
+                                ABBI, their high-stakes testing content creation
+                                tool. Before that, I reveled in the digital
+                                agency life at Springbox (2007-2010), delivering
+                                rich media experiences to a host of clients
+                                including Disney, PayPal, LG, Nascar, Experien,
+                                and Dell. I considered my real start to be at
+                                Enspire Learning (2001 - 2007) where i made
+                                lasting connections with co-workers and got my
+                                footing as both a UX designer and an engineer.
+                                And, of course, all throughout my career, I have
+                                done a random project here or there, both for
+                                the love of creation and to learn.
+                            </p>
+                            <a
+                                href="http://portfolio.jonnybomb.com/"
+                                target="_blank"
+                                >View Previous work</a
+                            >
+                        </div>
+                    </div>
+                </main>
+            </div>
+        </div>
+        <script type="text/javascript">
+            !(function () {
+                var wrapper = document.querySelector(".Portfolio__wrapper");
+                var header = document.querySelector(".Portfolio__header");
+                window.addEventListener("scroll", function (e) {
+                    var scrollTop = document.documentElement.scrollTop;
+                    var hasScrolled = wrapper.classList.contains("scrolled");
+                    if (scrollTop > 0 && !hasScrolled) {
+                        wrapper.classList.add("scrolled");
+                    } else if (scrollTop <= 0 && hasScrolled) {
+                        wrapper.classList.remove("scrolled");
+                    }
+                });
+            })();
+        </script>
+    </body>
+</html>

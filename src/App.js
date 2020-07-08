@@ -46,8 +46,8 @@ function App() {
     const state = initialState;
     return (
         <AppContext.Provider value={state}>
-            <Resume />
-            {/* <header className="Portfolio__header">
+            {/* <Resume /> */}
+            <header className="Portfolio__header">
                 <h1>Jonathan Elbom</h1>
                 <h2>Crafted Experiences</h2>
                 <p>
@@ -58,7 +58,7 @@ function App() {
             </header>
             <main className="Projects-wrapper">
                 <div className="Projects"></div>
-            </main> */}
+            </main>
             {/* <main class="Demos__toc"><div class="Demos__wrapper"></div></main> */}
         </AppContext.Provider>
     );
