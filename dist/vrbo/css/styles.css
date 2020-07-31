@@ -23,7 +23,7 @@ body {
   align-items: center;
   justify-content: center;
   position: fixed;
-  height: 220px;
+  height: 300px;
   width: 100%;
 }
 .Demos__header h1 {
@@ -31,24 +31,26 @@ body {
   text-align: center;
   margin-bottom: 4px;
   font-weight: 300;
+  font-size: 38px;
   padding-top: 6px;
 }
 .Demos__header h2 {
   width: 100%;
   text-align: center;
   margin-bottom: 0;
-  font-size: 37px;
+  font-size: 43px;
   color:#8a1b12;
 }
-.Demos__header > p {
+.Demos__header p {
   margin-top: 32px;
   max-width: 400px;
   text-align: center;
+  font-size: 18px;
 }
 .Demos__toc {
-  max-width: 1170px;
+  max-width: 1000px;
   margin: 0 auto;
-  padding: 220px 0 0;
+  padding: 300px 0 0;
   position: relative;
 }
 .Demos__section {

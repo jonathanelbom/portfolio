@@ -49,13 +49,15 @@
                     </div>
                 </div>
                 <header class="Portfolio__header">
-                    <h1>Jonathan Elbom</h1>
-                    <h2>Crafted UX</h2>
-                    <p>
-                        With expertise in the design and implementation of
-                        Motion, Interaction, and UI, I strive to be the
-                        difference that moves good to great.
-                    </p>
+                    <div class="Portfolio__header-content">
+                        <h1>Jonathan Elbom</h1>
+                        <h2>Crafted UX</h2>
+                        <p>
+                            With expertise in the design and implementation of
+                            Motion, Interaction, and UI, I strive to be the
+                            difference that moves good to great.
+                        </p>
+                    </div>
                 </header>
                 <main class="Portfolio__toc">
                     <div class="Portfolio__wrapper">
@@ -80,8 +82,8 @@
                             </p>
                             <p>
                                 Over the span of my 20 year career, I have spent
-                                my time as an individual contributor, a mentor,
-                                a manager, a student, a teacher, a leader, and a
+                                my time as a designer, an engineer, an individual contributor,
+                                a manager, a mentor, a student, a teacher, a listener, a leader, and a
                                 champion for process improvements that close the
                                 gaps between teams in order to deliver world
                                 class user experiences.
@@ -177,8 +179,11 @@
             !(function () {
                 var wrapper = document.querySelector(".Portfolio__wrapper");
                 var header = document.querySelector(".Portfolio__header");
+                var headerContent = document.querySelector(".Portfolio__header-content");
+                var maxScroll = 300;
                 window.addEventListener("scroll", function (e) {
                     var scrollTop = document.documentElement.scrollTop;
+                    headerContent.style.transform = `translateY(${scrollTop >= 0 ? -scrollTop * .5 : 0}px)`;
                     var hasScrolled = wrapper.classList.contains("scrolled");
                     if (scrollTop > 0 && !hasScrolled) {
                         wrapper.classList.add("scrolled");

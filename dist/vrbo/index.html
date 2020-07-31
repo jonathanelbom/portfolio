@@ -22,9 +22,11 @@
         <div id="content">
             <div class="Demos">
                 <header class="Demos__header">
-                    <h1>Jonathan Elbom</h1>
-                    <h2>Vrbo Portfolio</h2>
-                    <p>A collection of work from 2016 - 2020</p>
+                    <div class="Demos__header-content">
+                        <h1>Jonathan Elbom</h1>
+                        <h2>Vrbo Portfolio</h2>
+                        <p>A collection of work from 2016 - 2020</p>
+                    </div>
                 </header>
                 <main class="Demos__toc">
                     <div class="Demos__wrapper">
@@ -33,8 +35,8 @@
                             <p>
                                 The production prototypes and demos serve to
                                 work as parallel experiences to the production
-                                app where I can collaborate with design to build
-                                upcoming ux heavy features that then serve as
+                                app where I can collaborate with other designers and build
+                                upcoming interaction or motion rich features that then serve as
                                 blueprints and usable UI code for the production
                                 engineering implementation. This helps us
                                 achieve a highly crafted experience in our final
@@ -171,9 +173,9 @@
                                     target="_blank"
                                     >www.vrbo.com</a
                                 >), that I initially prototyped in collaboration
-                                with UX, built out for the production code base,
+                                with other designers, built out for the production code base,
                                 often in collaboration with our web app platform
-                                UI-Toolkit team, and continue to help maintain.
+                                UI-Toolkit team, and continue to help maintain and improve.
                                 The components are all built in React and the
                                 demos are static builds of the component dev
                                 harnesses. All these production component are built for desktop and mobile web.
@@ -331,7 +333,7 @@
                         <div class="Demos__section">
                             <h3>Usability Lab Prototypes</h3>
                             <p>
-                                These prototypes were built for usability
+                                These prototypes, built through a collaboration with other designers, were used for usability
                                 testing in user labs located in both Austin and
                                 London. Most of these prototypes were built in
                                 our same production tech stack, using existing
@@ -472,8 +474,10 @@
         <script type="text/javascript">
             !(function () {
                 var wrapper = document.querySelector(".Demos__wrapper");
+                var headerContent = document.querySelector(".Demos__header-content");
                 window.addEventListener("scroll", function (e) {
                     var scrollTop = document.documentElement.scrollTop;
+                    headerContent.style.transform = `translateY(${scrollTop >= 0 ? -scrollTop * .5 : 0}px)`;
                     var hasScrolled = wrapper.classList.contains("scrolled");
                     if (scrollTop > 0 && !hasScrolled) {
                         wrapper.classList.add("scrolled");

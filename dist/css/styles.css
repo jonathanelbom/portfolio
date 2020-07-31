@@ -73,7 +73,7 @@ body {
   top: 0;
   background: repeating-linear-gradient( 90deg, #8a1b12, #8a1b12 20%, #595a5b 20%, #595a5b 40%);
 }
-.Portfolio__header > h1 {
+.Portfolio__header h1 {
   width: 100%;
   text-align: center;
   margin-bottom: 8px;
@@ -81,14 +81,14 @@ body {
   padding-top: 36px;
   /* font-family: 'Roboto Condensed'; */
 }
-.Portfolio__header > h2 {
+.Portfolio__header h2 {
   width: 100%;
   text-align: center;
   margin-bottom: 0;
   font-size: 48px;
   color:#8a1b12;
 }
-.Portfolio__header > p {
+.Portfolio__header p {
   margin-top: 32px;
   max-width: 400px;
   text-align: center;
