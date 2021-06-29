@@ -31,6 +31,30 @@
                 <main class="Demos__toc">
                     <div class="Demos__wrapper">
                         <div class="Demos__section">
+                            <h3>Reel</h3>
+                            <p>
+                                These are some highlights of my motion and interaction work captured in video.
+                            </p>
+                            <ol class="Demos__videos-list">
+                                <li class="reel-video">
+                                    <iframe
+                                        class="reel-video-iframe"
+                                        width="560"
+                                        height="315"
+                                        src="https://www.youtube.com/embed/Y84gWdJdeWk?rel=0"
+                                        title="YouTube video player"
+                                        frameborder="0"
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                        allowfullscreen
+                                    >
+                                    </iframe>
+                                    <p>
+                                        This video highlights how my prototyping skills, specifically around mobile web touch interactions and motion design, aided in UX Lab tests, design iterations, and ultimately the final production build. These demos can be located below.
+                                    </p>
+                                </li>
+                            </ol>
+                        </div>
+                        <div class="Demos__section">
                             <h3>Production Prototypes and Demos</h3>
                             <p>
                                 The production prototypes and demos serve to
@@ -473,8 +497,49 @@
         </div>
         <script type="text/javascript">
             !(function () {
+                function throttle(callback, wait, immediate = false) {
+                    let timeout = null ;
+                    let initialCall = true;
+                    return function() {
+                        const callNow = immediate && initialCall;
+                        const next = () => {
+                            callback.apply(this, arguments)
+                            timeout = null;
+                        }
+                        if (callNow) { 
+                            initialCall = false;
+                            next();
+                        }
+                        if (!timeout) {
+                            timeout = setTimeout(next, wait);
+                        }
+                    }
+                }
+                function onResize() {
+                    var windowWidth = window.innerWidth;
+                    var videosSectionsWidth = videosSections.clientWidth;
+                    // console.log('onResize \nwindowWidth:', windowWidth, ', videosSections.clientWidth:', videosSections.clientWidth);
+                    const videoWrappers = document.querySelectorAll('.reel-video'); // -iframe');
+                    for (var i=0; i < videoWrappers.length; i++) {
+                        const videoWrapper = videoWrappers[i];
+                        const video = videoWrapper.querySelector('.reel-video-iframe');
+                        const height = parseInt(video.getAttribute('height'));
+                        const width = parseInt(video.getAttribute('width'));
+                        // console.log('video:', video);
+                        if (!isNaN(width) && !isNaN(height)) {
+                            const newWidth = (videosSectionsWidth * (videosSectionsWidth <= breakpoint ? 1 : .5)) - (videosSectionsWidth <= breakpoint ? 0 : (videoSpacing * .5));
+                            const newHeight = newWidth / (width / height);
+                            videoWrapper.style.width = `${newWidth}px`;
+                            video.height = newHeight;
+                            video.width = newWidth;
+                            // console.log('\tnewHeight:', newHeight, ' newWidth:', newWidth);
+                        }
+                        
+                    }
+                }
                 var wrapper = document.querySelector(".Demos__wrapper");
                 var headerContent = document.querySelector(".Demos__header-content");
+                var videosSections = document.querySelector(".Demos__videos-list");
                 window.addEventListener("scroll", function (e) {
                     var scrollTop = document.documentElement.scrollTop;
                     headerContent.style.transform = `translateY(${scrollTop >= 0 ? -scrollTop * .5 : 0}px)`;
@@ -485,6 +550,11 @@
                         wrapper.classList.remove("scrolled");
                     }
                 });
+                const breakpoint = 992;
+                const videoSpacing = 40; 
+                const onResizeThrottled = throttle(onResize, 300);
+                onResize();
+                window.addEventListener("resize", onResizeThrottled);
             })();
         </script>
     </body>
